@@ -44,4 +44,12 @@ public class CompanyService {
         pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "id"));
         return companyRepository.findAll(pageable);
     }
+
+    public List<Company> findAll() {
+        return companyRepository.findAll();
+    }
+
+    public Company find(Long companyId) {
+        return companyRepository.findById(companyId).get();
+    }
 }
